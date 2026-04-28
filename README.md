@@ -233,7 +233,7 @@ npm run dev
 ## 👥 Team
 
 Team INNOVA8  
-Google Solution Challenge 2024  
+Google Solution Challenge 2026 
 
 ---
 
