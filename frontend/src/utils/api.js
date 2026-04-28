@@ -58,4 +58,21 @@ export const getAnalysisStatus = async (taskId) => {
 };
 
 export const certifyModel = async (taskId, modelHash) => {
-  re
+  return apiRequest('/certify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      task_id: taskId,
+      model_hash: modelHash,
+      model_type: 'sklearn'
+    }),
+  });
+};
+
+export const verifyCredential = async (credentialId) => {
+  return apiRequest(`/verify/${credentialId}`);
+};
+
+export const healthCheck = async () => {
+  return apiRequest('/health');
+};
