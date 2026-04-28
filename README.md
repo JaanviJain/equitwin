@@ -83,7 +83,7 @@ EquiTwin follows a three-step pipeline:
 
 
 
-![Use Case](.assets/usecase.jpg)
+![Use Case](.assets/usecase.jpeg)
 
 
 
