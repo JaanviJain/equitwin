@@ -1,0 +1,44 @@
+name: Fairness CI/CD Gate
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  fairness-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install pandas numpy scikit-learn
+    
+    - name: Run fairness tests
+      run: |
+        cd tests
+        python test_fairness.py
+    
+    - name: Check fairness threshold
+      run: |
+        SCORE=$(cat fairness_score.txt)
+        echo "Fairness Score: $SCORE"
+        if (( $(echo "$SCORE < 0.7" | bc -l) )); then
+          echo "FAIRNESS GATE FAILED"
+          exit 1
+        fi
+        echo "FAIRNESS GATE PASSED"
+    
+    - name: Upload fairness report
+      uses: actions/upload-artifact@v3
+      with:
+        name: fairness-report
+        path: fairness_score.txt
