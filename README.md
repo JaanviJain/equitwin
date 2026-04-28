@@ -1,92 +1,245 @@
-# EquiTwin — Causal Fairness Gymnasium & Verifiable Auditor
-
-<div align="center">
+# ⚖️ EquiTwin: Causal Fairness Gymnasium & Verifiable Auditor
 
 **Don't just detect bias. Build immunity.**
 
-[![Fairness CI/CD](https://github.com/yourusername/equitwin/actions/workflows/fairness_ci.yml/badge.svg)](https://github.com/yourusername/equitwin/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-</div>
+EquiTwin is an end-to-end AI fairness auditing platform that combines causal discovery, adversarial fairness training, and cryptographic verification to detect, remediate, and certify fairness in machine learning models.
 
 ---
 
-## The Problem
+## 📌 Table of Contents
 
-ML models trained on historical data inherit and amplify societal biases. A hiring algorithm penalizes women because historically fewer were hired. A loan model denies minorities because of redlining patterns in training data.
+1. Problem Statement  
+2. Why Existing Tools Fall Short  
+3. Our Solution  
+4. Technical Architecture  
+5. Key Features  
+6. Technology Stack  
+7. Project Structure  
+8. Setup & Installation  
+9. Usage  
+10. Results  
+11. Regulatory Compliance  
+12. Future Roadmap  
+13. Team  
 
-Traditional bias tools only flag correlations. They miss the root **causal mechanisms** and provide no path to remediation.
+---
 
-## Our Solution: The Fairness Vaccine
+## 🚨 Problem Statement
 
-EquiTwin doesn't just test for bias — it builds immunity through a groundbreaking three-step process:
+Machine learning models now make life-altering decisions such as hiring, lending, and healthcare eligibility. These models learn from historical data, which often contains embedded societal biases.
 
-1. **Causal Discovery**: Identifies discriminatory pathways, not just correlations
-2. **Adversarial Gymnasium**: RL environment that trains models to be robustly fair
-3. **Verifiable Credentials**: W3C-compliant cryptographic fairness certificates
+### Core Challenges
 
-## Why This Matters
+- Detection is insufficient  
+- Remediation is absent  
+- Verification is missing  
 
-### Performance Comparison
+---
 
-| Engine | 10MB File | 100MB File | 1GB File | 10GB File |
-|--------|-----------|------------|----------|-----------|
-| **Pandas** | 0.8s | 8.5s | 95s | ~1000s |
-| **EquiTwin (DuckDB)** | 0.05s | 0.3s | 2.1s | ~18s |
-| **Speedup** | **16x** | **28x** | **45x** | **55x** |
+## ❌ Why Existing Tools Fall Short
 
-![Benchmark](backend/benchmark_comparison.png)
+| Capability | IBM AIF360 | Microsoft Fairlearn | Google What-If | EquiTwin |
+|-----------|------------|--------------------|----------------|----------|
+| Statistical bias detection | Yes | Yes | Yes | Yes |
+| Causal pathway discovery | No | No | No | Yes |
+| Adversarial fairness training | No | No | No | Yes |
+| Verifiable Credentials | No | No | No | Yes |
 
-### Privacy by Design
-All fairness training uses **synthetic data twins** generated via CTGAN. Original sensitive data is never exposed to the training process.
+---
 
-### Accessibility First
-Toggle between **Visual Mode** (3D causal graphs) and **BIOS Mode** (text-based, screen-reader compatible interface). WCAG compliant.
+## 💡 Our Solution
 
-## Tech Stack
+EquiTwin follows a three-step pipeline:
+
+- 🔍 Diagnose — Causal discovery identifies bias pathways  
+- 🛡️ Vaccinate — Adversarial fairness training mitigates bias  
+- 📜 Certify — Verifiable credentials provide cryptographic proof  
+
+---
+
+## 🧩 Process Flow Diagram
+
+> _Add your pipeline diagram here_
+
+```
+![Process Flow](./assets/process-flow.png)
+```
+
+---
+
+## 🧱 Architecture Diagram
+
+> _Add system architecture diagram here_
+
+```
+![Architecture](./assets/architecture.png)
+```
+
+---
+
+## 🎯 Use-Case Diagram
+
+> _Optional: Add use-case diagram_
+
+```
+![Use Case](./assets/usecase.png)
+```
+
+---
+
+## 🎨 Wireframes / UI Mockups
+
+> _Optional: Add UI screens_
+
+```
+![UI Mockup](./assets/ui-mockup.png)
+```
+
+---
+
+## ⚙️ Technical Architecture
+
+### Frontend
+- React + Vite  
+- Port: 4001  
+
+### Backend
+- FastAPI  
+- Port: 8000  
+
+Pipeline:
+1. Smart File Reader  
+2. Synthetic Twin Generator  
+3. Causal Discovery  
+4. Fairness Gymnasium  
+5. Bias Analysis  
+6. Verifiable Credential  
+
+---
+
+## ✨ Key Features
+
+### 🔗 Causal Discovery
+Identifies real cause-effect relationships instead of correlations.
+
+### 🔒 Synthetic Digital Twin
+Privacy-preserving synthetic dataset using CTGAN.
+
+### 🏋️ Fairness Gymnasium
+- Baseline vs post-training comparison  
+- Counterfactual testing  
+- Group fairness optimization  
+
+### 📜 Verifiable Credentials
+- W3C compliant  
+- Cryptographically signed  
+- Tamper-proof  
+
+### 📊 Bias Analysis
+- Demographic Parity  
+- Equalized Odds  
+- Disparate Impact  
+
+---
+
+## 🧰 Technology Stack
 
 | Layer | Technology |
-|-------|-----------|
-| **Frontend** | React 18, Tailwind CSS, Recharts, Framer Motion |
-| **Backend API** | FastAPI, Pydantic, Celery |
-| **Message Queue** | Redis |
-| **AI/ML Core** | PyTorch, Gymnasium, DoWhy, SDV/CTGAN |
-| **Data Engine** | DuckDB, Apache Arrow, Pandas |
-| **Security** | Cryptography, W3C Verifiable Credentials |
-| **DevOps** | GitHub Actions (with fairness gates) |
+|------|-----------|
+| Frontend | React, Vite, Tailwind |
+| Backend | FastAPI |
+| ML | scikit-learn |
+| Data | Pandas, NumPy |
+| Causal | LiNGAM |
+| Synthetic Data | CTGAN |
 
-## Quick Start
+---
 
-### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- Redis Server
+## 📂 Project Structure
 
-### Installation
+```
+equitwin/
+├── backend/
+├── frontend/
+└── README.md
+```
+
+---
+
+## 🚀 Setup & Installation
+
+### Backend
 
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/equitwin.git
-cd equitwin
-
-# Backend setup
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+venv\Scripts\activate   # Windows
 pip install -r requirements.txt
+python run.py
+```
 
-# Start Redis (Terminal 1)
-redis-server
+### Frontend
 
-# Start Celery Worker (Terminal 2)
-cd backend
-celery -A app.workers.celery_app worker --loglevel=info --pool=solo
-
-# Start FastAPI Server (Terminal 3)
-cd backend
-uvicorn app.main:app --reload --port 8000
-
-# Frontend setup (Terminal 4)
+```bash
 cd frontend
 npm install
-npm start
+npm run dev
+```
+
+---
+
+## 🧪 Usage
+
+1. Upload dataset  
+2. Select target column  
+3. Run analysis  
+4. View:
+   - Fairness metrics  
+   - Causal pathways  
+   - Before/After comparison  
+5. Download credential  
+
+---
+
+## 📊 Results (UCI Adult Dataset)
+
+| Metric | Value |
+|-------|------|
+| Accuracy | 79.5% |
+| Fairness Score | 77.1% |
+| Disparate Impact | 33.7% |
+
+---
+
+## ⚖️ Regulatory Compliance
+
+- EU AI Act  
+- EEOC Guidelines  
+- ADEA  
+- Title VII  
+
+---
+
+## 🛣️ Future Roadmap
+
+- CI/CD fairness gates  
+- More datasets  
+- Model cards  
+- Docker deployment  
+
+---
+
+## 👥 Team
+
+Team INNOVA8  
+Google Solution Challenge 2024  
+
+---
+
+## 📄 License
+
+This project is part of Google Solution Challenge.
+
+---
+
+**⚖️ EquiTwin — Don't just detect bias. Build immunity.**
