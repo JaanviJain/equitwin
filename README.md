@@ -61,9 +61,10 @@ EquiTwin follows a three-step pipeline:
 
 > _Add your pipeline diagram here_
 
-```
-![Process Flow](./assets/process-flow.png)
-```
+![Process Flow](./assets/process-flow01.jpeg)
+![Process Flow](./assets/process-flow02.jpeg)
+![Process Flow](./assets/process-flow03.jpeg)
+
 
 ---
 
@@ -71,9 +72,9 @@ EquiTwin follows a three-step pipeline:
 
 > _Add system architecture diagram here_
 
-```
-![Architecture](./assets/architecture.png)
-```
+
+![Architecture](./assets/architecture.jpeg)
+
 
 ---
 
@@ -81,9 +82,9 @@ EquiTwin follows a three-step pipeline:
 
 > _Optional: Add use-case diagram_
 
-```
-![Use Case](./assets/usecase.png)
-```
+
+![Use Case](./assets/usecase.jpeg)
+
 
 ---
 
