@@ -94,6 +94,7 @@ EquiTwin follows a three-step pipeline:
 
 
 ![UI Mockup](./assets/4e4b59ea-fc1e-4a81-a1de-815fd24c36b3.jpg)
+![UI Mockup](./assets/f3a365f9-8937-4a34-a4d0-3895df0eb46c.jpg)
 
 ---
 
